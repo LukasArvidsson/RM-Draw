@@ -11,7 +11,8 @@ Licensed GPL-3.0 like the original (see `LICENSE`).
 - The original floating bar is hidden, and long-pressing tools no longer adds
   them to it.
 - Fixed bar: Fountain pen and Fineliner in the bottom-left corner, magenta,
-  blue and green dots in the bottom-right corner. No border, no hide handle.
+  blue and green dots in the bottom-right corner. Tapping a pen
+  (even the active one) resets the colour to black. No border, no hide handle.
   They're hardcoded in the `RM-Draw` block at the end of the file.
 - The floating layers bar is unchanged.
 

@@ -1676,13 +1676,12 @@ AFFECT /qml/device/view/documentview/DocumentView.qml
 						MouseArea {
 							anchors.fill: parent
 							onClicked: {
-								let currentColour = documentViewTools.activePen.colorCode;
-								let currentPalette = documentViewTools.activePen.color;
 								let currentThickness = documentViewTools.activePen.thickness;
 								toolbar.selectPen("primary");
 								documentViewTools.activePen.tool = modelData.tool;
-								documentViewTools.activePen.colorCode = currentColour;
-								documentViewTools.activePen.color = currentPalette;
+								/* Tapping a pen always resets the colour to black. */
+								documentViewTools.activePen.color = 0;
+								documentViewTools.activePen.colorCode = 4278190080;
 								documentViewTools.activePen.thickness = currentThickness;
 							}
 						}
