@@ -4,6 +4,26 @@ My personal fork of [FouzR/xovi-extensions](https://github.com/FouzR/xovi-extens
 used to customise the floating toolbar (`floating.qmd`) on my own reMarkable.
 Licensed GPL-3.0 like the original (see `LICENSE`).
 
+## What's different from upstream (3.28/floating.qmd)
+
+- Pen menu "QuickTools" foldout only has the QuickTools item (Cycle Preset,
+  Save Preset and Reset FloatBar are gone). QuickTools shows/hides my bar.
+- The original floating bar is hidden, and long-pressing tools no longer adds
+  them to it.
+- Fixed bar: Fountain pen and Fineliner in the bottom-left corner, magenta,
+  blue and green dots in the bottom-right corner. No border, no hide handle.
+  They're hardcoded in the `RM-Draw` block at the end of the file.
+- The floating layers bar is unchanged.
+
+## If the document view breaks after a deploy
+
+Put the upstream file back and redeploy:
+
+    git show f63bbc5:3.28/floating.qmd > /tmp/floating.qmd
+    scp /tmp/floating.qmd root@10.11.99.1:/home/root/xovi/exthome/qt-resource-rebuilder/floating.qmd
+
+then restart xovi.
+
 ## Setup on the tablet (once)
 
 1. xovi and `qt-resource-rebuilder` installed (e.g. via Vellum).
