@@ -1635,7 +1635,7 @@ AFFECT /qml/device/view/documentview/DocumentView.qml
 				x: 24
 				y: root.height - height - 24
 				z: 100
-				spacing: 16
+				spacing: 12
 				Repeater {
 					model: [
 						{ tool: 21, icon: "qrc:/ark/icons/calligraphy_pen_tip", name: "Fountain" },
@@ -1644,15 +1644,15 @@ AFFECT /qml/device/view/documentview/DocumentView.qml
 					Item {
 						required property var modelData
 						readonly property bool isActive: documentViewTools.isWritingTool(documentViewTools.activePen.tool) && documentViewTools.activePen.tool === modelData.tool
-						width: 96
-						height: 96
+						width: 64
+						height: 64
 						Image {
 							id: rmDrawPenIcon
 							anchors.centerIn: parent
-							width: 64
-							height: 64
-							sourceSize.width: 64
-							sourceSize.height: 64
+							width: 48
+							height: 48
+							sourceSize.width: 48
+							sourceSize.height: 48
 							fillMode: Image.PreserveAspectFit
 							source: modelData.icon
 						}
@@ -1660,16 +1660,16 @@ AFFECT /qml/device/view/documentview/DocumentView.qml
 							anchors.centerIn: parent
 							visible: rmDrawPenIcon.status === Image.Error
 							text: modelData.name
-							font.pointSize: 12
+							font.pointSize: 8
 							color: "black"
 						}
 						Rectangle {
 							visible: parent.isActive
 							anchors.horizontalCenter: parent.horizontalCenter
 							anchors.bottom: parent.bottom
-							width: 48
-							height: 6
-							radius: 3
+							width: 32
+							height: 4
+							radius: 2
 							color: "black"
 							antialiasing: false
 						}
@@ -1695,7 +1695,7 @@ AFFECT /qml/device/view/documentview/DocumentView.qml
 				x: root.width - width - 24
 				y: root.height - height - 24
 				z: 100
-				spacing: 16
+				spacing: 12
 				Repeater {
 					model: [
 						{ palette: 12, rgb: 4278190080, shown: "magenta" },
@@ -1705,22 +1705,22 @@ AFFECT /qml/device/view/documentview/DocumentView.qml
 					Item {
 						required property var modelData
 						readonly property bool isActive: documentViewTools.isWritingTool(documentViewTools.activePen.tool) && documentViewTools.activePen.color === modelData.palette
-						width: 96
-						height: 96
+						width: 40
+						height: 40
 						Rectangle {
 							anchors.centerIn: parent
-							width: 64
-							height: 64
-							radius: 32
+							width: 40
+							height: 40
+							radius: 20
 							color: modelData.shown
 							antialiasing: false
 						}
 						Rectangle {
 							visible: parent.isActive
 							anchors.centerIn: parent
-							width: 20
-							height: 20
-							radius: 10
+							width: 12
+							height: 12
+							radius: 6
 							color: "white"
 							antialiasing: false
 						}
